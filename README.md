@@ -14,11 +14,12 @@
 
   npx tsc --init --rootDir src --outDir dist
 
-Também é possível outras configurações como:
+* Também é possível outras configurações como:
+
   --noImplicitAny true: Impede tipagens com any
   --allowJs true: Permite JavaScript
 
-Para resolver os scripts de execução do projeto:
+* Para resolver os scripts de execução do projeto:
 
   npm install --save-dev ts-node nodemon
 
@@ -31,4 +32,13 @@ Para resolver os scripts de execução do projeto:
     "ignore": [],
     "exec": "ts-node ./src/index.ts"
   }
+
+* Configuração do "build" e "start"
+
+No arquivo package.json adicionamos os scripts
+  "start": "node dist/index.js",
+  "build": "tsc"
+O build cria os arquivos no diretório dist para produção e o start roda a aplicação que está em produção, no diretório dist.
+
+
 
